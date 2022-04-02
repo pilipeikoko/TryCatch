@@ -16,9 +16,7 @@ TRY:                'try';
 CATCH:              'catch';
 FINALLY:            'finally';
 
-
 IDENTIFIER: Letter LetterOrDigit*;
-WS:                 [ \t\r\n\u000C]+ -> channel(HIDDEN);
 
 fragment LetterOrDigit
     : Letter
@@ -26,7 +24,4 @@ fragment LetterOrDigit
     ;
 
 fragment Letter
-    : [a-zA-Z$_]
-    | ~[\u0000-\u007F\uD800-\uDBFF]
-    | [\uD800-\uDBFF] [\uDC00-\uDFFF]
-    ;
+    : [a-zA-Z$_];
